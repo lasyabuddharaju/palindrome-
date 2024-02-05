@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Palindrome</title>
+        <link rel="stylesheet" href="jav.css">
+    </head>
+    <body style="background-color: rgb(169, 169, 169);">
+        <div class="bg">
+            <form>
+                <label for="num">Enter the number:</label>
+                <input type="text" id="num" style="font-size: 18px;" minlength="2" required><br><br>
+                <button  onclick="func()" type="button" style="font-size: 18px; ">Submit</button>  
+            </form> 
+            <p id="demo"></p>
+        <script>
+            function func()
+                {
+                    let x=document.getElementById("num").value;
+                    let y=x;
+                    let reverse=0;
+                    let remainder=0;
+                    while(x>0)
+                    {
+                        remainder= parseInt(x%10);
+                        reverse=parseInt(reverse*10+remainder);
+                        x=parseInt(x/10);
+                    }
+                    if(reverse==y)
+                    {
+                        document.getElementById("demo").innerHTML="palindrome";
+                    }
+                    else
+                    {
+                        document.getElementById("demo").innerHTML="not palindrome";  
+                    }                  
+                }
+        </script>
+         </div> 
+    </body>
+</html>
